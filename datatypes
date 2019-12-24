@@ -1,0 +1,7 @@
+typedef struct { /* Multi-precision integer */
+char sign;      /* ’+’ for positive integers, ’–’ for negative integers, ’ ’ for zero */
+int size;       /* Number of longs needed to represent the integer */
+long *word;     /* link to the array of longs holding the integer */
+} mpint;
+
+
