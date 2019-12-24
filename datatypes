@@ -1,7 +1,34 @@
+#define MAX_FIELDS 64
+
+typedef short int GF_d;
+
 typedef struct { /* Multi-precision integer */
-char sign;      /* ’+’ for positive integers, ’–’ for negative integers, ’ ’ for zero */
-int size;       /* Number of longs needed to represent the integer */
-long *word;     /* link to the array of longs holding the integer */
+char sign;       /* ’+’ for positive integers, ’–’ for negative integers, ’ ’ for zero */
+int size;        /* Number of longs needed to represent the integer */
+long *word;      /* link to the array of longs holding the integer */
 } mpint;
+
+typedef mpint GFelement;
+
+typedef struct {    /* Data structure for polynomial */
+int degree;         /* The exact degree */
+GFelement *coeff;   /* Pointer to the array of coefficients */
+} poly;
+
+
+typedef struct {      /* Data structure vector */
+int size;             /* Vector size */
+GFelement *element;   /* Pointer to the array of vector elements */
+} vector; 
+
+
+typedef struct {        /* Data structure matrix */
+int row;                /* Number of rows */
+int col;                /* Number of columns */
+GFelement **element;    /* Pointer to 2-dimensional array of elements */
+} matrix;
+
+
+
 
 
