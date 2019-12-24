@@ -1,4 +1,5 @@
 #define MAX_FIELDS 64
+#define MINUS_INFINITY 0 
 
 typedef short int GF_d;
 
