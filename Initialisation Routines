@@ -1,1 +1,9 @@
+/* This routine initializes the GFL library and must be called at the very 
+beginning of any program that involves GFL library calls.*/
+
 void GFLinitialize();
+
+/* Read the first n (<=10^6) primes from database and store them in the
+array SMALL PRIME. The array element SMALL PRIME[i − 1] holds the ith prime for i >= 1.*/
+
+void readSmallPrimes(int n)
