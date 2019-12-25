@@ -1,0 +1,8 @@
+
+int zeroint(mpint n)
+{
+    if(n.size==1 && n.sign==''&& n.word[0]==0)
+        return 1;
+    else
+        return 0;
+}
