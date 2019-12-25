@@ -29,7 +29,70 @@ int col;                /* Number of columns */
 GFelement **element;    /* Pointer to 2-dimensional array of elements */
 } matrix;
 
+typedef struct {         /* Data structure to store complete or partial factorization of an integer */
+int nf;                  /* Number of factors */
+int *multiplicity;       /* Pointer to the array holding the multiplicities of the factors */
+mpint *factor;           /* Pointer to the array of factors */
+} intFactor;
+
+typedef mpint GFelement;   /* Element of a Galois field */
+typedef short GF d;        /* Galois field descriptor */
+
+struct {
+GFelement p;                  /* characteristic */
+GFelement q;                 /* cardinality */
+int extlev;                  /* Extension level */
+GF d extof;                  /* Extension of */
+long extdeg;                /* Extension degree (over immediate subfield) */
+long totextdeg;             /* Total extension degree (over prime subfield) */
+GFelement *defpoly;          /* Pointer to coefficients of defining polynomial */
+long *primpower;            /* Table of powers of a primitive element */
+long *disclog;               /* Table of discrete logs with respect to a primitive element */
+long *zechlt;               /* Zech’s logarithm table */
+} GF info[MAX FIELDS];
+
+
+typedef struct {             /* Structure holding the partial or complete factorization of a polynomial */
+long nf;                      /* Number of factors */
+long *multiplicity;           /* Pointer to the array holding the multiplicities of the factors */
+poly *factor;                 /* Pointer to the array of factors */
+} polyFactor;
+
+
+/* Factor base for prime fields */
+typedef struct {
+GFelement p; /* Characteristic of the field in which discrete log is taken */
+GFelement gen; /* Base to which discrete log is taken */
+int fbsize; /* Number of primes in the factor base */
+long *base; /* Elements of factor base */
+GFelement *baselog; /* Discrete logs of factor base elements */
+} factorBase1;
 
 
 
+/* Factor base for non-prime fields of extension level = 1 */
+typedef struct {
+GFelement p;                /* Characteristic of the field in which discrete log is taken */
+GFelement gen;               /* Base to which discrete log is taken */
+int maxdeg;                 /* Maximum degree of irreducible polynomials in the factor base */
+int fbsize;              /* Number of elements in the factor base */
+int nprime;              /* Number of primes between 2 and p-1 */
+long *base;            /* Elements of factor base */
+GFelement *baselog;     /* Discrete logs of factor base elements */
+} factorBase2;
+
+
+
+
+/* Factor base for non-prime fields of extension level > 1 */
+typedef struct {
+GFelement p;              /* Characteristic of the field in which discrete log is taken */
+matrix ctop;             /* Matrix for composed-to-polynomial basis transformation */
+GFelement gen;           /* Base to which discrete log is taken */
+int maxdeg;              /* Maximum degree of irreducible polynomials in the factor base */
+int fbsize;            /* Number of elements in the factor base */
+int nprime;            /* Number of primes between 2 and p-1 */
+long *base;             /* Elements of factor base */
+GFelement *baselog;        /* Discrete logs of factor base elements */
+} factorBase3;
 
