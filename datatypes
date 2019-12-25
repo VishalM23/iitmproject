@@ -1,15 +1,12 @@
 #define MAX_FIELDS 64
 #define MINUS_INFINITY 0 
 
-typedef short int GF_d;
-
 typedef struct { /* Multi-precision integer */
 char sign;       /* ’+’ for positive integers, ’–’ for negative integers, ’ ’ for zero */
 int size;        /* Number of longs needed to represent the integer */
 long *word;      /* link to the array of longs holding the integer */
 } mpint;
 
-typedef mpint GFelement;
 
 typedef struct {    /* Data structure for polynomial */
 int degree;         /* The exact degree */
@@ -36,20 +33,20 @@ mpint *factor;           /* Pointer to the array of factors */
 } intFactor;
 
 typedef mpint GFelement;   /* Element of a Galois field */
-typedef short GF d;        /* Galois field descriptor */
+typedef short GF_d;        /* Galois field descriptor */
 
 struct {
 GFelement p;                  /* characteristic */
 GFelement q;                 /* cardinality */
 int extlev;                  /* Extension level */
-GF d extof;                  /* Extension of */
+GF_d extof;                  /* Extension of */
 long extdeg;                /* Extension degree (over immediate subfield) */
 long totextdeg;             /* Total extension degree (over prime subfield) */
 GFelement *defpoly;          /* Pointer to coefficients of defining polynomial */
 long *primpower;            /* Table of powers of a primitive element */
 long *disclog;               /* Table of discrete logs with respect to a primitive element */
 long *zechlt;               /* Zech’s logarithm table */
-} GF info[MAX FIELDS];
+} GF_info[MAX FIELDS];
 
 
 typedef struct {             /* Structure holding the partial or complete factorization of a polynomial */
