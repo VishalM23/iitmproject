@@ -6,3 +6,24 @@ int zeroint(mpint n)
     else
         return 0;
 }
+
+int positiveint(mpint n)
+{
+    if(n.sign=='+')
+        return 1;
+    else 
+        return 0;
+}
+
+int negativeint(mpint n)
+{
+    if(n.sign=='-')
+        return 1;
+    else 
+        return 0;
+}
+
+void destroyint(mpint*n)
+{
+free(n);
+}
