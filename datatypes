@@ -14,6 +14,10 @@ GFelement *coeff;   /* Pointer to the array of coefficients */
 } poly;
 
 
+typedef mpint GFelement;   /* Element of a Galois field */
+typedef short GF_d;        /* Galois field descriptor */
+
+
 typedef struct {      /* Data structure vector */
 int size;             /* Vector size */
 GFelement *element;   /* Pointer to the array of vector elements */
@@ -32,8 +36,6 @@ int *multiplicity;       /* Pointer to the array holding the multiplicities of t
 mpint *factor;           /* Pointer to the array of factors */
 } intFactor;
 
-typedef mpint GFelement;   /* Element of a Galois field */
-typedef short GF_d;        /* Galois field descriptor */
 
 struct {
 GFelement p;                  /* characteristic */
@@ -46,7 +48,7 @@ GFelement *defpoly;          /* Pointer to coefficients of defining polynomial *
 long *primpower;            /* Table of powers of a primitive element */
 long *disclog;               /* Table of discrete logs with respect to a primitive element */
 long *zechlt;               /* Zech’s logarithm table */
-} GF_info[MAX FIELDS];
+} GF_info[MAX_FIELDS];
 
 
 typedef struct {             /* Structure holding the partial or complete factorization of a polynomial */
