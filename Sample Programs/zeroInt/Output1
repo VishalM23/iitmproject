@@ -1,4 +1,4 @@
-cc 1.c 
+cc program1.c 
 ./a.out 
 
 It's zero element.
