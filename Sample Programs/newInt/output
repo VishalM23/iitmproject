@@ -1,0 +1,4 @@
+cc program.c 
+./a.out 
+
+It's zero element.
