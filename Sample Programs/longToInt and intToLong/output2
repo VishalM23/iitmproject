@@ -1,0 +1,11 @@
+harishsp@harishsp-HP-Laptop-15-da1xxx:~/GFL$ cc program.c -lm
+harishsp@harishsp-HP-Laptop-15-da1xxx:~/GFL$ ./a.out 
+
+Enter the long integer number:80004572
+The given number in radix format is as follows:
+2 R^1 + 12895708 R^0
+
+Where R=33554432
+
+
+The number is :80004572
