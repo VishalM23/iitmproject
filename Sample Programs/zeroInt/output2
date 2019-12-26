@@ -1,4 +1,4 @@
-cc program2.c 
-./a.out 
+harishsp@harishsp-HP-Laptop-15-da1xxx:~/GFL$ cc 1b.c 
+harishsp@harishsp-HP-Laptop-15-da1xxx:~/GFL$ ./a.out 
 
 It's not a zero element.
