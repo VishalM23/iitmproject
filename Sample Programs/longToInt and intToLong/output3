@@ -1,0 +1,10 @@
+harishsp@harishsp-HP-Laptop-15-da1xxx:~/GFL$ ./a.out 
+
+Enter the long integer number:33554432
+The given number in radix format is as follows:
+1 R^1 + 0 R^0
+
+Where R=33554432
+
+
+The number is :33554432
