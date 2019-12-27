@@ -1,0 +1,7 @@
+harishsp@harishsp-HP-Laptop-15-da1xxx:~/GFL$ cc 2b.c -lm
+harishsp@harishsp-HP-Laptop-15-da1xxx:~/GFL$ ./a.out 
+
+Enter the long integer number:65451212
+
+
+The number 65451212 is positive
