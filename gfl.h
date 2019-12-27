@@ -131,22 +131,6 @@ mpint newInt(){ // Initializes a mpint to zero element
 }
 
 
-void assignInt(mpint *n,char c[]){ //Assuming a long int consists of 32 bits and we use a 25 bits per long int packing
-
-	// So our base/radix is 2 power 25 that is 33554432
-
-
-	int i;
-	
-	for(i=0;c[i]!='\0';i++);
-
-
-	//function incomplete 
-	//please ignore 
-	//will be completed soon
-
-}
-
 void longToInt(mpint *n,long m){ //Convert the long m to the mpint format and store it in n.
 	int i=0;
 
@@ -207,11 +191,6 @@ int negativeint(mpint n)
         return 1;
     else
         return 0;
-}
-
-void destroyint(mpint*n)
-{
-free(n);
 }
 
 #endif
