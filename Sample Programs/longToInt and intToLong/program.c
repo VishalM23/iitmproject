@@ -37,3 +37,39 @@ void main(){
         printf("\n\nThe number is :%ld\n",res);
 
 }
+
+
+//Function definition
+//Present in gfl.h
+
+/*
+void longToInt(mpint *n,long m){ //Convert the long m to the mpint format and store it in n.
+	int i=0;
+	while(m>0){
+		n->start=insertbegin(n->start,m%33554432);
+		m/=33554432;
+		i++;
+	}
+
+	n->size+=i-1;
+
+	if(m>=0)
+		n->sign='+';
+	else
+		n->sign='-';
+}
+
+long intToLong(mpint a){
+	int s=a.size-1;
+	long int res=0;
+	NODE cur=a.start;
+
+	while(s>=0){
+		res+=pow(33554432,s)*cur->data;
+		cur=cur->addr;
+		s--;
+	}
+
+	return res;
+}
+*/
