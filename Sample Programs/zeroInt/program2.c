@@ -16,3 +16,14 @@ void main(){
                 printf("\nIt's not a zero element.\n");
 }
 
+//Function definition
+//Present in gfl.h
+/*
+int zeroint(mpint n)
+{
+    if(n.size==1 && n.sign==' '&& n.start->data==0)
+        return 1;
+    else
+        return 0;
+}
+*/
