@@ -3,7 +3,7 @@
 #ifndef __GFL_H_
 #define __GFL_H
 #define MAX_FIELDS 64
-#define MINUS_INFINITY 0 
+#define MINUS_INFINITY 0
 
 struct node{
   long int data;
@@ -31,7 +31,7 @@ typedef short GF_d;        /* Galois field descriptor */
 typedef struct {      /* Data structure vector */
 int size;             /* Vector size */
 GFelement *element;   /* Pointer to the array of vector elements */
-} vector; 
+} vector;
 
 
 typedef struct {        /* Data structure matrix */
@@ -149,7 +149,7 @@ void longToInt(mpint *n,long m){ //Convert the long m to the mpint format and st
 
 	n->size+=i-1;
 
-	
+
 }
 
 long intToLong(mpint a){
@@ -193,4 +193,83 @@ int negativeint(mpint n)
         return 0;
 }
 
+int unityInt(mpint n)
+{
+    if(n.start->data==1)
+    return 1;
+    else return 0;
+}
+
+
+int negUnityInt(mpint n)
+{
+    if(n.start->data==-1)
+    return 1;
+    else return 0;
+}
+
+int intTwo(mpint n)
+{
+    if(n.start->data==2)
+    return 1;
+    else return 0;
+}
+
+void twoPowerToInt(mpint *n,long e){ //Convert the long m to the mpint format and store it in n.
+	int i=0;
+	long long m=1;
+
+    while (e > 0) {
+            m = m * 2;
+            e--;
+}
+
+        if(m>0)
+                n->sign='+';
+        if(m<0)
+                n->sign='-';
+
+
+
+	while(m>0){
+		n->start=insertbegin(n->start,m%33554432);
+		m/=33554432;
+		i++;
+	}
+
+	n->size+=i-1;
+
+
+}
+
+void destroyInt(mpint* n)
+{
+    NODE start=n->start,next;
+    while (start != NULL)
+   {
+       next = start->addr;
+       free(start);
+       start = next;
+   }
+    start=NULL;
+    free(n);
+}
+
+void intMinus(mpint*n,mpint m)
+{
+    n->size=m.size;
+    n->sign=m.sign=='+'?'-':'+';
+    NODE cur=m.start;
+    while(cur!=NULL)
+    {
+        insertbegin(n->start,cur->data);
+    }
+
+}
+
+long logTwo(mpint n)
+{
+
+  return(log2(intToLong(n)));
+}
 #endif
