@@ -10,6 +10,7 @@ struct node{
   struct node* addr;
 };
 
+
 typedef struct node* NODE;
 
 typedef struct { /* Multi-precision integer */
