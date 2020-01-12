@@ -44,7 +44,7 @@ typedef struct {         /* Data structure to store complete or partial factoriz
 int nf;                  /* Number of factors */
 int *multiplicity;       /* Pointer to the array holding the multiplicities of the factors */
 mpint *factor;           /* Pointer to the array of factors */
-} intFactor;
+ } intFactor;
 
 
 struct {
